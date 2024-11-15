@@ -19,5 +19,17 @@ services:
       - '6379:6379'
     restart: always
 
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: server_container
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+      - redis
+    restart: always
+
 volumes:
   db_data:

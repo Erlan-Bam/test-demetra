@@ -8,8 +8,8 @@ import { ProxyService } from './proxy/proxy.service';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5433,
+      host: 'db',
+      port: 5432,
       username: 'postgres',
       password: 'my_password_lol',
       database: 'test-demetra',
@@ -18,7 +18,7 @@ import { ProxyService } from './proxy/proxy.service';
     }),
     BullModule.forRoot({
       redis: {
-        host: 'localhost',
+        host: 'redis',
         port: 6379,
       },
     }),
