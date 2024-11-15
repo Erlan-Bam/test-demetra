@@ -31,18 +31,3 @@ export class ProxyService {
     }
   }
 }
-
-const proxy = new ProxyService();
-
-async function call() {
-  try {
-    const response = await proxy.makeRequest(
-      'http://localhost:3000/users/get-user-by-id?id=1',
-      'GET',
-    );
-    console.log('Response:', response);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-call();
